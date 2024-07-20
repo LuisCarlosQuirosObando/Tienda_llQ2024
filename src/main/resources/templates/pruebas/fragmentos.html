@@ -74,23 +74,17 @@
         <!-- 3 Sección para crear los filtros -->
         <section th:fragment="filtros" class="bg-light">
             <div class="row py-2">
-                <div class="col-md-1"></div>
                 <div class="col-md-3">
-                    <form method="POST" th:action="@{/pruebas/query1}" 
-                          class="was-validated">
-                        <div class="card">                            
+                    <form method="POST" th:action="@{/pruebas/query1}" class="was-validated">
+                        <div class="card">
                             <div class="card-body">
                                 <div class="mb-3">
                                     <label for="precioInf">[[#{pruebas.precio.inferior}]]</label>
-                                    <input type="number" class="form-control" 
-                                           th:value="${precioInf}"
-                                           th:name="precioInf" required="true"/>
+                                    <input type="number" class="form-control" th:value="${precioInf}" th:name="precioInf" required="true"/>
                                 </div>
                                 <div class="mb-3">
                                     <label for="precioSup">[[#{pruebas.precio.superior}]]</label>
-                                    <input type="number" class="form-control" 
-                                           th:value="${precioSup}"
-                                           th:name="precioSup" required="true"/>
+                                    <input type="number" class="form-control" th:value="${precioSup}" th:name="precioSup" required="true"/>
                                 </div>
                             </div>
                             <div class="card-footer text-center">
@@ -102,21 +96,16 @@
                     </form>
                 </div>
                 <div class="col-md-3">
-                    <form method="POST" th:action="@{/pruebas/query2}" 
-                          class="was-validated">
-                        <div class="card">                            
+                    <form method="POST" th:action="@{/pruebas/query2}" class="was-validated">
+                        <div class="card">
                             <div class="card-body">
                                 <div class="mb-3">
                                     <label for="precioInf">[[#{pruebas.precio.inferior}]]</label>
-                                    <input type="number" class="form-control" 
-                                           th:value="${precioInf}"
-                                           th:name="precioInf" required="true"/>
+                                    <input type="number" class="form-control" th:value="${precioInf}" th:name="precioInf" required="true"/>
                                 </div>
                                 <div class="mb-3">
                                     <label for="precioSup">[[#{pruebas.precio.superior}]]</label>
-                                    <input type="number" class="form-control" 
-                                           th:value="${precioSup}"
-                                           th:name="precioSup" required="true"/>
+                                    <input type="number" class="form-control" th:value="${precioSup}" th:name="precioSup" required="true"/>
                                 </div>
                             </div>
                             <div class="card-footer text-center">
@@ -128,21 +117,16 @@
                     </form>
                 </div>
                 <div class="col-md-3">
-                    <form method="POST" th:action="@{/pruebas/query3}" 
-                          class="was-validated">
+                    <form method="POST" th:action="@{/pruebas/query3}" class="was-validated">
                         <div class="card success">
                             <div class="card-body">
                                 <div class="mb-3">
                                     <label for="precioInf">[[#{pruebas.precio.inferior}]]</label>
-                                    <input type="number" class="form-control" 
-                                           th:value="${precioInf}"
-                                           th:name="precioInf" required="true"/>
+                                    <input type="number" class="form-control" th:value="${precioInf}" th:name="precioInf" required="true"/>
                                 </div>
                                 <div class="mb-3">
                                     <label for="precioSup">[[#{pruebas.precio.superior}]]</label>
-                                    <input type="number" class="form-control" 
-                                           th:value="${precioSup}"
-                                           th:name="precioSup" required="true"/>
+                                    <input type="number" class="form-control" th:value="${precioSup}" th:name="precioSup" required="true"/>
                                 </div>
                             </div>
                             <div class="card-footer text-center">
@@ -153,7 +137,28 @@
                         </div>
                     </form>
                 </div>
+                <div class="col-md-3">
+                    <form method="POST" th:action="@{/pruebas/query4}" class="was-validated">
+                        <div class="card success">
+                            <div class="card-body">
+                                <div class="mb-3">
+                                    <label for="existenciasInf">[[#{consulta.existencias.inferior}]]</label>
+                                    <input type="number" class="form-control" th:value="${existenciasInf}" th:name="existenciasInf" required="true"/>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="existenciasSup">[[#{consulta.existencias.superior}]]</label>
+                                    <input type="number" class="form-control" th:value="${existenciasSup}" th:name="existenciasSup" required="true"/>
+                                </div>
+                            </div>
+                            <div class="card-footer text-center">
+                                <button type="submit" class="btn btn-success">
+                                    <i class="fas fa-search"></i> [[#{consulta.existencias}]]
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>               
             </div>
-        </section> 
-</body>
+        </section>
+    </body>
 </html>

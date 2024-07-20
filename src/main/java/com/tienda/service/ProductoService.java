@@ -28,5 +28,12 @@ public interface ProductoService {
     
     //Lista de productos utilizando consultas con SQL Nativo
     public List<Producto> metodoNativo(double precioInf, double precioSup);
+    
+    //Esto lo hice sin querer, lo dejo para practica. Esta funcional
+    //Lista de productos utilizando consultas con SQL Nativo. Lo hice nativo sin querer.
+//    public List<Producto> metodoNativo2(int existenciasInf, int existenciasSup);
+    
+    //Tarea de semana 9
+     public List<Producto> findByExistenciasBetweenOrderByDescripcion(int existenciasInf, int existenciasSup);
 
 }

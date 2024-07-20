@@ -64,5 +64,17 @@ public class ProductoServiceImpl implements ProductoService {
     public List<Producto> metodoNativo(double precioInf, double precioSup) {
         return productoDao.metodoNativo(precioInf, precioSup);
     }
+    //Esto lo hice sin querer, lo dejo para practica. Esta funcional
+//    @Override
+//    @Transactional(readOnly=true)    
+//    public List<Producto> metodoNativo2(int existenciasInf, int existenciasSup) {
+//        return productoDao.metodoNativo2(existenciasInf, existenciasSup);
+//    }
+    
+     @Override
+    @Transactional(readOnly = true)
+    public List<Producto> findByExistenciasBetweenOrderByDescripcion(int existenciasInf, int existenciasSup) {
+        return productoDao.findByExistenciasBetweenOrderByDescripcion(existenciasInf, existenciasSup);
+    }
 
 }

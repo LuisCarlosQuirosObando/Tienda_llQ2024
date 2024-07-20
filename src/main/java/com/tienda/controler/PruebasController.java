@@ -53,6 +53,7 @@ public class PruebasController {
             @RequestParam(value = "precioSup") double precioSup, Model model) {
         var productos = productoService.findByPrecioBetweenOrderByDescripcion(precioInf, precioSup);
         model.addAttribute("productos", productos);
+        model.addAttribute("totalProductos", productos.size());
         model.addAttribute("precioInf", precioInf);
         model.addAttribute("precioSup", precioSup);
         return "/pruebas/listado2";
@@ -79,4 +80,27 @@ public class PruebasController {
         model.addAttribute("precioSup", precioSup);
         return "/pruebas/listado2";
     }
+    
+//    @PostMapping("/query4") ESTA CONSULTA ES NATIVA, LA HICE PRIMERO POR QUE NO ME ACORDABA QUE SE HABIA SOLICITADO AMPLIADA.
+//    public String consultaQuery4(@RequestParam(value = "existenciasInf") int existenciasInf,
+//            @RequestParam(value = "existenciasSup") int existenciasSup, Model model) {
+//        var productos = productoService.metodoNativo2(existenciasInf, existenciasSup);
+//        model.addAttribute("productos", productos);
+//        model.addAttribute("totalProductos", productos.size());
+//        model.addAttribute("existenciasInf", existenciasInf);
+//        model.addAttribute("existenciasSup", existenciasSup);
+//        return "/pruebas/listado2";
+//    }
+    
+    @PostMapping("/query4")
+    public String consultaQuery4(@RequestParam(value = "existenciasInf") int existenciasInf,
+            @RequestParam(value = "existenciasSup") int existenciasSup, Model model) {
+        var productos = productoService.findByExistenciasBetweenOrderByDescripcion(existenciasInf, existenciasSup);
+        model.addAttribute("productos", productos);
+        model.addAttribute("totalProductos", productos.size());
+        model.addAttribute("existenciasInf", existenciasInf);
+        model.addAttribute("existenciasSup", existenciasSup);
+        return "/pruebas/listado2";
+    }
+    
 }
