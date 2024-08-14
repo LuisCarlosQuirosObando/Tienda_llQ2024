@@ -150,7 +150,7 @@ public class ProyectConfig implements WebMvcConfigurer {
                     request
                             .requestMatchers("/", "/index", "/errores/**", "/error", "/error/**",
                                     "/carrito/**", "/pruebas/**", "/reportes/**",
-                                    "/registro/**", "/js/**", "/css/**", "/webjars/**")
+                                    "/registro/**", "/js/**", "/css/**", "/webjars/**", "/refrescarBoton")
                             .permitAll();
 
                     for (RequestMatcher matcher : requestMatchers) {
